@@ -17,6 +17,7 @@ Testing:
 - add a tab with information about the app in the settings
 - add functions in the data tab: creating a database copy, loading a database copy
 - will complete the colors tab in the settings window
+- add the application start condition only from the main file
 
 ### Developer information
 
