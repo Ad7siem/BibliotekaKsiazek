@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Biblioteka Książek - Library app
 
 A simple program of the library of books for scouts from the city of Pabianice
