@@ -1,0 +1,9 @@
+main.spec
+/__pycache__
+/Biblioteka - ZHP Pabianice
+/database/__pycache__
+/view/Button/__pycache__
+/view/Entries/__pycache__
+/view/Menu/__pycache__
+/view/Search/__pycache__
+/view/Treeview/__pycache__
