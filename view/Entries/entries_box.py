@@ -6,6 +6,7 @@ from view.Treeview import persons
 #################################################################
 ###########  ############
 #################################################################
+
 def entries_box(root):
 	global title_entry, author_entry, position_entry, id_label, category_entry, date_rental_entry, person_rental_entry, other_text, entries_frame
 	###
@@ -35,8 +36,6 @@ def entries_box(root):
 
 	date_rental_label = Label(entries_frame, text='Data Wyp.')
 	date_rental_label.grid(row=1, column=2, padx=10, pady=10)
-	# date_rental_dateEntry = DateEntry(entries_frame, width=20, selectmode="month")
-	# date_rental_dateEntry.grid(row=1, column=3, padx=10, pady=10)
 	date_rental_entry = Entry(entries_frame, width=25)
 	date_rental_entry.grid(row=1, column=3, padx=10, pady=10)
 

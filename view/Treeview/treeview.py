@@ -130,6 +130,12 @@ def list_id():
 def config_color_treeview(row, color):
 	return my_tree.tag_configure(f'{row}', background=color)
 
+# #################################################################
+# ###########  ############
+# #################################################################
+# def config_color_text_treeview(row, color):
+# 	return my_tree.tag_configure(f'{row}', background=color)
+
 
 #################################################################
 ###########  ############
@@ -145,6 +151,12 @@ def insert_treeview(iid, value_1,value_2,value_3,value_4,value_5,value_6,value_7
 #################################################################
 def config_row_treeview(size):
 	return my_tree.config(height=size)
+
+#################################################################
+#############  ##############
+#################################################################
+def config_column_size(column, size):
+	return my_tree.column(f"{column}", width=size)
 
 #################################################################
 ###########  ############

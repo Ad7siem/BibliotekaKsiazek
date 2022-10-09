@@ -1,8 +1,8 @@
 from view.Treeview import treeview
-from view.Entries import entries_box
-from view.Button import button_box
+from view.Entries.entries_box import entries_box
+from view.Button.button_box import Button_box
 from view.Search import search_box
-from view.Menu import menu
+from view.Menu.menu import Menu_app
 from database import database
 from tkinter import *
 from tkinter import ttk
@@ -44,15 +44,15 @@ style.map('Treeview',background=[('selected', "#347083")])
 #################################################################
 
 ###
-menu.menu_app(root)
+Menu_app(root)
 ### Create Search Box
 search_box.search_space(root)
 ### Create Table Box
 treeview.treeview(root)
 ### Create Record Box
-entries_box.entries_box(root)
+entries_box(root)
 ### Create Button Box
-button_box.button_box(root)
+Button_box(root)
 ### Show database in Table
 treeview.query_database()
 

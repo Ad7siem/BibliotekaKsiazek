@@ -7,4 +7,8 @@ main.spec
 /view/Menu/__pycache__
 /view/Search/__pycache__
 /view/Treeview/__pycache__
+/view/Menu/Color/__pycache__
+/view/Menu/Tab/__pycache__
+/view/Menu/Database/__pycache__
+/view/Menu/Info/__pycache__
 .gitignore
