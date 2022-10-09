@@ -1,4 +1,4 @@
-# Biblioteka Książek - Library app
+# Biblioteka Książek - Library app version 0.1.2 (BETA)
 
 A simple program of the library of books for scouts from the city of Pabianice
 
