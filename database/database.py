@@ -1,6 +1,8 @@
 import sqlite3
+from treebase import Parser
 
-database = 'database/database.db'
+# database = 'database/database.db'
+database = str(Parser().get_parser('database', 'directory')) + '/database.db'
 
 def create_table():
     conn = sqlite3.connect(database)
@@ -37,8 +39,6 @@ def show_database(name):
     c.execute(f"SELECT rowid, * FROM {name}")
 
     items = c.fetchall()
-    # for item in c.fetchall():
-    #     print(item)
 
     conn.commit()
     conn.close()
@@ -120,11 +120,22 @@ def lookup_records(name):
     # c.execute("SELECT rowid, * FROM listofbook WHERE rowid LIKE ? OR title LIKE ? OR author LIKE ? OR category LIKE ? OR person_rental LIKE ?", (name, name, name, name, name, ))
     c.execute(f"""SELECT rowid, * FROM listofbook WHERE rowid LIKE '%{name}%' OR title LIKE '%{name}%' OR author LIKE '%{name}%' OR category LIKE '%{name}%' OR person_rental LIKE '%{name}%'""")
 
-    # c.execute(f"SELECT rowid, * FROM listofbook WHERE title LIKE '%{name}%'")
     records = c.fetchall()
 
     conn.commit()
     conn.close()
 
     return records
-    
+
+
+def lookup_records_person(name):
+    conn = sqlite3.connect(database)
+    c = conn.cursor()
+    c.execute(f"""SELECT rowid, * FROM personrental WHERE rowid LIKE '%{name}' OR firstname LIKE '%{name}' OR lastname LIKE '%{name}' OR team LIKE '%{name}'""")
+
+    records = c.fetchall()
+
+    conn.commit()
+    conn.close()
+
+    return records

@@ -1,4 +1,3 @@
-from tkinter import colorchooser
 from tkinter import *
 from tkinter import ttk
 from database import database
@@ -86,12 +85,23 @@ def select_person():
 	window = Label(select_person)
 	window.pack(padx=10, pady=10)
 
+	###
+	search_person = LabelFrame(window, text='Wyszukiwanie osoby')
+	search_person.pack(pady=(0, 15))
+
+	###
+	global search_person_entry
+	search_person_entry = Entry(search_person, width=50)
+	search_person_entry.grid(row=0, column=0, padx=5, pady=(5, 10))
+	search_person_button = Button(search_person, text='Wyszukaj', command=search_records_person)
+	search_person_button.grid(row=0, column=1, padx=5, pady=(5, 10))
+
 	### Create The Treeview
 	treeview_person(window)
 
 	###
 	select_person_button = Button(window, text='Wybierz osobę', command=person)
-	select_person_button.grid(row=1, column=0, padx=10, pady=10)
+	select_person_button.pack(padx=10, pady=10)
 
 	###
 	query_persons_database()
@@ -103,7 +113,9 @@ def select_person():
 def treeview_person(root):
 	### Create a Treeview Frame
 	tree_frame = Frame(root)
-	tree_frame.grid(row=0, column=0, padx=10, pady=10)
+	tree_frame.pack(padx=10, pady=10)
+
+
 
 	### Create The Treeview
 	global my_tree
@@ -132,6 +144,36 @@ def treeview_person(root):
 	### Create Striped Row Tags
 	my_tree.tag_configure('oddrow', background="white")
 	my_tree.tag_configure('evenrow', background="lightblue")
+
+
+#################################################################
+###########  ############
+################################################################# 
+def clear_treeview_person():
+	my_tree.delete(*my_tree.get_children())
+
+
+#################################################################
+###########  ############
+################################################################# 
+def search_records_person():
+	###
+	clear_treeview_person()
+
+	###
+	lookup_record = search_person_entry.get()
+	count = 0
+	
+	for record in database.lookup_records_person(lookup_record):
+		if count % 2 == 0:
+			my_tree.insert(parent='', index=END, iid=count, text='',
+							values=(record[0], record[1], record[2], record[3], record[4]),
+							tags=('evenrow'))
+		else:
+			my_tree.insert(parent='', index=END, iid=count, text='',
+							values=(record[0], record[1], record[2], record[3], record[4]),
+							tags=('oddrow'))
+		count += 1
 
 
 #################################################################

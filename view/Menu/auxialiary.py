@@ -1,10 +1,9 @@
-from tkinter import *
-from view.Menu import menu
-
-
 #################################################################
-###
+### Najprawdopodobniej plik zostanie usunięty w przyszłości
 #################################################################
 
-def settings_deiconify():
-    menu.Settings().deiconify()
+# def settings_deiconify():
+#     # settings.Settings().settings.deiconify()
+#     # # settings.Settings().settings.deiconify()
+#     # settings.Settings()
+#     pass

@@ -12,6 +12,8 @@ parser.read('treebase.ini')
 saved_primary_color = parser.get('colors', 'primary_color')
 saved_secondary_color = parser.get('colors', 'secondary_color')
 saved_highlight_color = parser.get('colors', 'highlight_color')
+saved_text_color = parser.get('colors', 'text_color')
+saved_text_highlight_color = parser.get('colors', 'text_highlight_color')
 row_treeview = parser.get('treeview', 'row')
 width_id = parser.get('treeview', 'ID')
 width_title = parser.get('treeview', 'title')
@@ -77,6 +79,22 @@ def treeview(root):
 	my_tree.tag_configure("oddrow", background=saved_secondary_color)
 	my_tree.tag_configure("evenrow", background=saved_primary_color)
 
+	### Add Some Style
+	style = ttk.Style()
+
+	### Configure the Treeview Colors
+	style.configure("Treeview",
+					background="#D3D3D3",
+					foreground=saved_text_color,
+					rowheight=25,
+					fieldbackground="#D3D3D3"
+					)
+
+	### Change Selected Color
+	style.map('Treeview',background=[('selected', saved_highlight_color)])
+	style.map('Treeview',foreground=[('selected', saved_text_highlight_color)])
+
+
 	### Bind the treeview
 	my_tree.bind("<ButtonRelease-1>", cursor_my_tree)
 
@@ -130,12 +148,6 @@ def list_id():
 def config_color_treeview(row, color):
 	return my_tree.tag_configure(f'{row}', background=color)
 
-# #################################################################
-# ###########  ############
-# #################################################################
-# def config_color_text_treeview(row, color):
-# 	return my_tree.tag_configure(f'{row}', background=color)
-
 
 #################################################################
 ###########  ############
@@ -152,11 +164,13 @@ def insert_treeview(iid, value_1,value_2,value_3,value_4,value_5,value_6,value_7
 def config_row_treeview(size):
 	return my_tree.config(height=size)
 
+
 #################################################################
 #############  ##############
 #################################################################
 def config_column_size(column, size):
 	return my_tree.column(f"{column}", width=size)
+
 
 #################################################################
 ###########  ############

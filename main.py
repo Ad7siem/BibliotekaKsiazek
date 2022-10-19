@@ -6,8 +6,7 @@ from view.Menu.menu import Menu_app
 from database import database
 from tkinter import *
 from tkinter import ttk
-from tkinter import colorchooser
-from configparser import ConfigParser
+
 
 database.create_table()
 #################################################################
@@ -27,17 +26,6 @@ style = ttk.Style()
 
 ### Pick A Theme
 style.theme_use('default')
-
-### Configure the Treeview Colors
-style.configure("Treeview",
-				background="#D3D3D3",
-				foreground="black",
-				rowheight=25,
-				fieldbackground="#D3D3D3"
-				)
-
-### Change Selected Color
-style.map('Treeview',background=[('selected', "#347083")])
 
 #################################################################
 ##################### Create space window #######################

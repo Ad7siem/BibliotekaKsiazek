@@ -55,9 +55,5 @@ class Info:
         open_new(url)
 
 
-        ###
-        # info_text = Text(info_labelframe)
-        # info_text.pack(fill=BOTH, expand=TRUE)
-
 if __name__ == "__main__":
     Info()
