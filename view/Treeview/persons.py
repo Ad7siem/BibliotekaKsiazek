@@ -13,13 +13,17 @@ def add_person():
 	add_person.title("Dodawanie osoby")
 	add_person.iconbitmap('bookshelf.ico')
 	add_person.resizable(0,0)
+	add_person.grab_set()
 
 	### Create Label of the window
 	window = Label(add_person)
 	window.pack(padx=10, pady=10)
 
-	treeview_person(window)
-	
+	###
+	treeveiw_frame = Frame(window)
+	treeveiw_frame.grid(row=0, column=0, padx=10, pady=10)
+	treeview_person(treeveiw_frame)
+
 	###
 	option_frame = LabelFrame(window, text='Opcje')
 	option_frame.grid(row=0, column=1, padx=10, pady=10)
@@ -79,6 +83,7 @@ def select_person():
 	select_person.title('Wybór osoby')
 	select_person.resizable(0, 0)
 	select_person.iconbitmap('bookshelf.ico')
+	select_person.grab_set()
 
 
 	### Create Label of the window
@@ -114,8 +119,6 @@ def treeview_person(root):
 	### Create a Treeview Frame
 	tree_frame = Frame(root)
 	tree_frame.pack(padx=10, pady=10)
-
-
 
 	### Create The Treeview
 	global my_tree

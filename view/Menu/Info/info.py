@@ -18,7 +18,7 @@ class Info:
         name_label_key = Label(info_box, text='Nazwa aplikacji:')
         name_label_value = Label(info_box, text='Biblioteka Książek')
         version_label_key = Label(info_box, text='Wersja:')
-        version_label_value = Label(info_box, text='0.1.2 (BETA)')
+        version_label_value = Label(info_box, text='0.1.3 (BETA)')
         creator_app_key = Label(info_box, text='Twórca programu:')
         creator_app_value = Label(info_box, text='Adam Golewski', fg="blue")
         program_created_from_key = Label(info_box, text='Program stworzony dla:')

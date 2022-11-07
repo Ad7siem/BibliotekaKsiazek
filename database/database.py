@@ -117,7 +117,6 @@ def update_record(record, ID): #, name, newRecord, column, key):
 def lookup_records(name):
     conn = sqlite3.connect(database)
     c = conn.cursor()
-    # c.execute("SELECT rowid, * FROM listofbook WHERE rowid LIKE ? OR title LIKE ? OR author LIKE ? OR category LIKE ? OR person_rental LIKE ?", (name, name, name, name, name, ))
     c.execute(f"""SELECT rowid, * FROM listofbook WHERE rowid LIKE '%{name}%' OR title LIKE '%{name}%' OR author LIKE '%{name}%' OR category LIKE '%{name}%' OR person_rental LIKE '%{name}%'""")
 
     records = c.fetchall()
@@ -131,7 +130,7 @@ def lookup_records(name):
 def lookup_records_person(name):
     conn = sqlite3.connect(database)
     c = conn.cursor()
-    c.execute(f"""SELECT rowid, * FROM personrental WHERE rowid LIKE '%{name}' OR firstname LIKE '%{name}' OR lastname LIKE '%{name}' OR team LIKE '%{name}'""")
+    c.execute(f"""SELECT rowid, * FROM personrental WHERE rowid LIKE '%{name}%' OR firstname LIKE '%{name}%' OR lastname LIKE '%{name}%' OR team LIKE '%{name}%'""")
 
     records = c.fetchall()
 
@@ -139,3 +138,5 @@ def lookup_records_person(name):
     conn.close()
 
     return records
+
+    

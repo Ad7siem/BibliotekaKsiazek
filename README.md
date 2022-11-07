@@ -38,6 +38,14 @@ Library:
 
 ### Changes made
 
+0.1.4
+Fixed:
+- Correct search for people from the database
+- Buttons for adding a person to the borrowers database are visible again
+
+
+
+0.1.3
 Add:
 - Extract from menu.py class settings and put it in new file settings.py
 - Colors Text have been added in the .ini file

@@ -112,6 +112,7 @@ skontaktuj się z twórcą programu.
     #################################################################
     def save_to_excel(self):
         directory = path.join(path.expanduser('~'), 'Dokumenty\\Biblioteka ZHP Pabianice\\')
+        directory = self.link_database_entry.get()
         Path(directory).mkdir(parents=True, exist_ok=True)
         file_excel = path.join(directory, 'database.xlsx')
 
